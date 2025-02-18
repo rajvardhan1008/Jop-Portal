@@ -239,3 +239,31 @@ exports.searchSeekers = async (req, res) => {
         });
     }
 };
+
+exports.getAppliedJobs = async (req, res) => {
+    try {
+        const { seekerId } = req.params; // Get the seeker ID from the request params
+
+        const seeker = await Seeker.findById(seekerId).populate('appliedForJobs'); // Populate applied jobs
+
+        if (!seeker) {
+            return res.status(404).json({ 
+                success: false, 
+                message: "Seeker not found" 
+            });
+        }
+
+        // Send the applied jobs to the seeker
+        return res.status(200).json({
+            success: true,
+            appliedJobs: seeker.appliedForJobs,
+            message: "Fetched all jobs applied by the seeker"
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Error fetching applied jobs",
+            error: error.message,
+        });
+    }
+};
