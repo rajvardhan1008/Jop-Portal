@@ -6,11 +6,13 @@ function ProviderJobs() {
 
     const [allJobs, setAllJobs] = useState();
 
+    const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
+
     useEffect(()=>{
         const getProviderJobs = async () => {
             try{
                 const currentProvider = localStorage.getItem("currentProvider");
-                const response = await axios.get(`http://localhost:4000/api/job-provider/jobs/${currentProvider}`);
+                const response = await axios.get(BASE_URL + `/job-provider/jobs/${currentProvider}`);
 
                 console.log(response.data.data);
 
