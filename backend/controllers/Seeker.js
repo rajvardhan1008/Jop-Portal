@@ -44,6 +44,29 @@ exports.seekerSignup = async(req, res)=>{
       }
 }
 
+exports.getSeekerById = async(req, res)=>{
+    const {seekerId} = req.params;
+    try{
+        const user = await Seeker.findById(seekerId);
+        if(!user){
+            return res.status(404).send({
+                success:false,
+                message:'User Not Found'
+            });
+        }
+
+        return res.status(200).send({
+            success:true,
+            message:'User Fetched Successfully',
+        });
+    } catch(err){
+        return res.status(500).send({
+            success:false,
+            message:'User Error',
+        })
+    }
+}
+
 exports.getAllSeekers = async (req, res) => {
     try{
         const allSeekers = await Seeker.find();
