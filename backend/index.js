@@ -14,7 +14,7 @@ database.connect();
 
 app.use(cors({
   origin: "https://rajvardhan-job-portal.vercel",
-  methods: ["POST", "GET"],
+  methods: ["GET", "PUT", "POST", "DELETE"],
   credentials: true
 }));
 
