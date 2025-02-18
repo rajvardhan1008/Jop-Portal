@@ -5,12 +5,14 @@ import { useNavigate } from "react-router-dom";
 const AllSeekers = () => {
   const [allSeekers, setAllSeekers] = useState([]);
 
+   const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const getAllSeekers = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/job-seeker/getall");
+        const response = await axios.get(BASE_URL + '/job-seeker/getall');
         console.log(response.data); // Debugging API response
         setAllSeekers(response.data.allSeekers); // Assuming response.data is an array
       } catch (error) {
