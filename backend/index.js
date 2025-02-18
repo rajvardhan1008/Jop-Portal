@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 const dotenv = require('dotenv');
 const database = require('./config/database');
@@ -13,11 +13,10 @@ dotenv.config();
 database.connect();
 
 app.use(cors({
-  origin: "https://rajvardhan-job-portal.vercel",
-  methods: ["GET", "PUT", "POST", "DELETE"],
+  origin: "https://rajvardhan-job-portal.vercel.app", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-
 
 app.use(express.json());
 
