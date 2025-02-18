@@ -10,21 +10,22 @@ const AllJobs = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getAllJobs = async () => {
-      try {
-        toast.loading("Loading...");
-        const response = await axios.get(BASE_URL + '/jobs/all');
-        console.log(response.data.jobs); // Debugging API response
-        setAlljobs(response.data.jobs); // Assuming response.data is an array
-        toast.success("All Jobs Fetched Successfully");
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-        toast.error("Unable to Fetch Jobs");
-      }
-    };
+  const getAllJobs = async () => {
+    const toastId = toast.loading("Loading..."); // Store the toast ID
+    try {
+      const response = await axios.get(BASE_URL + '/jobs/all');
+      console.log(response.data.jobs); // Debugging API response
+      setAlljobs(response.data.jobs); // Assuming response.data is an array
+      toast.update(toastId, { render: "All Jobs Fetched Successfully", type: "success", isLoading: false, autoClose: 3000 });
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+      toast.update(toastId, { render: "Unable to Fetch Jobs", type: "error", isLoading: false, autoClose: 3000 });
+    }
+  };
 
-    getAllJobs();
-  }, []); // Runs only once when the component mounts
+  getAllJobs();
+}, []); // Runs only once when the component mounts
+
 
 
   async function handleApply(jobId) {
