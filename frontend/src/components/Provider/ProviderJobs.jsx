@@ -12,6 +12,7 @@ function ProviderJobs() {
         const getProviderJobs = async () => {
             try{
                 const currentProvider = localStorage.getItem("currentProvider");
+                toast.loading("Loading...");
                 const response = await axios.get(BASE_URL + `/job-provider/jobs/${currentProvider}`);
 
                 console.log(response.data.data);
