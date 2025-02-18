@@ -19,6 +19,6 @@ router.delete('/delete/:seekerId', deleteSeeker);
 router.get('/jobbyskills', getJobsBySkills) 
 router.get('/applyforjob/:seekerId/:jobId', applyForJob);
 router.get('/search', searchSeekers);
-router.get('/applied-for-jobs/:seekerId', getAppliedJobs);
+router.get('/applied-jobs/:seekerId', getAppliedJobs);
 
 module.exports = router;
