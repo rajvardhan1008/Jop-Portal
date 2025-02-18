@@ -29,6 +29,7 @@ function CreateJob() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+         toast.loading("Loading...");
           const response = await axios.post(BASE_URL + '/jobs/create',
             formData
           );
