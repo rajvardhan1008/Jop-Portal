@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const JobProviderSignup = () => {
 
-  const BASE_URL = "https://jop-portal-8yaz.onrender.com/api"
+  const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
 
   const navigate = useNavigate();
 
