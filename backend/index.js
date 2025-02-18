@@ -12,7 +12,12 @@ const PORT = process.env.PORT || 4000;
 dotenv.config();
 database.connect();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://rajvardhan-job-portal.vercel",
+  methods: ["POST", "GET"],
+  credentials: true
+}));
+
 
 app.use(express.json());
 
