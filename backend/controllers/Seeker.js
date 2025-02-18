@@ -57,8 +57,10 @@ exports.getSeekerById = async(req, res)=>{
 
         return res.status(200).send({
             success:true,
+            user, 
             message:'User Fetched Successfully',
         });
+        
     } catch(err){
         return res.status(500).send({
             success:false,
