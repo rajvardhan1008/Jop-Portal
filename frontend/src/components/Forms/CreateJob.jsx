@@ -27,32 +27,29 @@ function CreateJob() {
       }
 
       const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-         toast.loading("Loading...");
-          const response = await axios.post(BASE_URL + '/jobs/create',
-            formData
-          );
-          toast.success("Job Created Successfully");
-    
-          // Clear input fields after successful submission
-          setFormData({
-            firstName: "",
-            lastName: "",
-            skill: "",
-            experience: "",
-            location: "",
-            maxCTC: "",
-            noticePeriod: "",
-          });
+  e.preventDefault();
+  try {
+    toast.loading("Loading...");
+    const response = await axios.post(BASE_URL + '/jobs/create', formData);
+    toast.success("Job Created Successfully");
 
-          navigate('/job-provider/jobs');
-    
-        } catch (error) {
-          console.error("Error submitting form", error);
-          toast.error("Can Not Create Job");
-        }
-      };
+    setFormData({
+      title: "",
+      skill: "",
+      experience: "",
+      location: "",
+      maxCTC: "",
+      noticePeriod: "",
+      providerId: localStorage.getItem("currentProvider"),
+    });
+
+    navigate('/job-provider/jobs');
+  } catch (error) {
+    toast.error("Can Not Create Job");
+    console.error("Error submitting form", error);
+  }
+};
+
 
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-zinc-900 text-white p-6">
