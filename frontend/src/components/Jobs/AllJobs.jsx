@@ -6,12 +6,13 @@ import { useNavigate } from "react-router-dom";
 const AllJobs = () => {
   const [alljobs, setAlljobs] = useState([]);
 
-  const BASE_URL = "https://jop-portal-8yaz.onrender.com/api"
+  const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
   const navigate = useNavigate();
 
   useEffect(() => {
     const getAllJobs = async () => {
       try {
+        toast.loading("Loading...");
         const response = await axios.get(BASE_URL + '/jobs/all');
         console.log(response.data.jobs); // Debugging API response
         setAlljobs(response.data.jobs); // Assuming response.data is an array
@@ -33,7 +34,7 @@ const AllJobs = () => {
             return;
         }
 
-        const response = await axios.get(`http://localhost:4000/api/job-seeker/applyforjob/${currentSeeker}/${jobId}`);
+        const response = await axios.get( BASE_URL +  `/job-seeker/applyforjob/${currentSeeker}/${jobId}`);
 
         if (!response || !response.data.success) {
             toast.error("Seeker Not Found");
