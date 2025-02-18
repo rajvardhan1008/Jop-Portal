@@ -58,10 +58,16 @@ const AllJobs = () => {
     <div className="bg-zinc-900 w-full text-white p-6 relative">
       <h2 className="text-3xl font-bold mb-4 text-center">All Jobs</h2>
 
-      <div className="bg-green-700 px-4 py-2 absolute rounded-lg left-[90%] cursor-pointer top-4 font-semibold"
-      onClick ={()=> navigate('/')}
-      >
-        Log Out
+      <div className="flex gap-4 absolute top-4 left-[85%]">
+        <div className="bg-green-700 px-4 py-2 rounded-lg cursor-pointer font-semibold"
+        onClick ={()=> navigate('/')}
+        >
+          Log Out
+        </div>
+        <div className='bg-[#424cbc] px-4 py-2 rounded-lg cursor-pointer font-semibold'
+        onClick={() => navigate('/job-seeker/history')}>
+          History
+        </div>
       </div>
       
       {alljobs.length > 0 ? (
