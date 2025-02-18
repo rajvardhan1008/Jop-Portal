@@ -33,6 +33,7 @@ const JobSeekerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      toast.loading("Loading...");
       const response = await axios.post(
         BASE_URL + '/job-seeker/signup',
         formData
