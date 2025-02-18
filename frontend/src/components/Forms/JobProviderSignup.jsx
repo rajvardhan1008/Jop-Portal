@@ -32,6 +32,7 @@ const JobProviderSignup = () => {
     e.preventDefault();
     try {
       console.log("data", formData);
+      toast.loading("Loading...");
       const response = await axios.post(
         BASE_URL + '/job-provider/signup',
         formData
