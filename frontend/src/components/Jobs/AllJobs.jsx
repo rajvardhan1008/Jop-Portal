@@ -10,22 +10,18 @@ const AllJobs = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-  const getAllJobs = async () => {
-    const toastId = toast.loading("Loading..."); // Store the toast ID
-    try {
-      const response = await axios.get(BASE_URL + '/jobs/all');
-      console.log(response.data.jobs); // Debugging API response
-      setAlljobs(response.data.jobs); // Assuming response.data is an array
-      toast.update(toastId, { render: "All Jobs Fetched Successfully", type: "success", isLoading: false, autoClose: 3000 });
-    } catch (error) {
-      console.error("Error fetching jobs:", error);
-      toast.update(toastId, { render: "Unable to Fetch Jobs", type: "error", isLoading: false, autoClose: 3000 });
-    }
-  };
+    const getAllJobs = async () => {
+      try {
+        const response = await axios.get(BASE_URL + '/jobs/all');
+        console.log(response.data.jobs); // Debugging API response
+        setAlljobs(response.data.jobs); // Assuming response.data is an array
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      }
+    };
 
-  getAllJobs();
-}, []); // Runs only once when the component mounts
-
+    getAllJobs();
+  }, []); // Runs only once when the component mounts
 
 
   async function handleApply(jobId) {
@@ -37,7 +33,7 @@ const AllJobs = () => {
             return;
         }
 
-        const response = await axios.get( BASE_URL +  `/job-seeker/applyforjob/${currentSeeker}/${jobId}`);
+        const response = await axios.get( BASE_URL + `/job-seeker/applyforjob/${currentSeeker}/${jobId}`);
 
         if (!response || !response.data.success) {
             toast.error("Seeker Not Found");
@@ -52,13 +48,11 @@ const AllJobs = () => {
       }
   }
 
-
-
   return (
     <div className="bg-zinc-900 w-full text-white p-6 relative">
       <h2 className="text-3xl font-bold mb-4 text-center">All Jobs</h2>
 
-      <div className="flex gap-4 absolute top-4 left-[85%]">
+      <div className="flex gap-4 absolute top-4 left-[75%]">
         <div className="bg-green-700 px-4 py-2 rounded-lg cursor-pointer font-semibold"
         onClick ={()=> navigate('/')}
         >
@@ -67,6 +61,10 @@ const AllJobs = () => {
         <div className='bg-[#424cbc] px-4 py-2 rounded-lg cursor-pointer font-semibold'
         onClick={() => navigate('/job-seeker/history')}>
           History
+        </div>
+        <div className='bg-[#86892f] px-4 py-2 rounded-lg cursor-pointer font-semibold'
+        onClick={() => navigate('/job-seeker/profile')}>
+          Profile
         </div>
       </div>
       
