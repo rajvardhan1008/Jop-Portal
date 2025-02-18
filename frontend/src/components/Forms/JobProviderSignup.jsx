@@ -29,35 +29,29 @@ const JobProviderSignup = () => {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      console.log("data", formData);
-      toast.loading("Loading...");
-      const response = await axios.post(
-        BASE_URL + '/job-provider/signup',
-        formData
-      );
-      console.log("After respoonse",response);
-      toast.success("Job Provider Signup Success");
-      
-      // Clear input fields after successful submission
-      setFormData({
-        firstName: "",
-        lastName: "",
-        company: "",
-        email: "",
-        mobile: "",
-      });
+  e.preventDefault();
+  try {
+    toast.loading("Loading...");
+    const response = await axios.post(BASE_URL + '/job-provider/signup', formData);
+    toast.success("Job Provider Signup Success");
 
-      localStorage.setItem("currentProvider", response.data.provider._id);
+    // Clear form data and set localStorage
+    setFormData({
+      firstName: "",
+      lastName: "",
+      company: "",
+      email: "",
+      mobile: "",
+    });
 
-      navigate('/job-seeker/allseekers');
+    localStorage.setItem("currentProvider", response.data.provider._id);
+    navigate('/job-seeker/allseekers');
+  } catch (error) {
+    toast.error("Signup failed! Please try again.");
+    console.error("Error submitting form", error);
+  }
+};
 
-    } catch (error) {
-      console.error("Error submitting form", error);
-      toast.error("Signup failed! Please try again.");
-    }
-  };
 
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-zinc-900 text-white p-6">
