@@ -31,36 +31,30 @@ const JobSeekerForm = () => {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      toast.loading("Loading...");
-      const response = await axios.post(
-        BASE_URL + '/job-seeker/signup',
-        formData
-      );
-      console.log(response.data.seeker._id);
-      toast.success("Job Seeker Signup Success");
+  e.preventDefault();
+  try {
+    toast.loading("Loading...");
+    const response = await axios.post(BASE_URL + '/job-seeker/signup', formData);
+    toast.success("Job Seeker Signup Success");
 
-      // Clear input fields after successful submission
-      setFormData({
-        firstName: "",
-        lastName: "",
-        skills: "",
-        experience: "",
-        location: "",
-        currentCTC: "",
-        noticePeriod: "",
-      });
+    setFormData({
+      firstName: "",
+      lastName: "",
+      skills: "",
+      experience: "",
+      location: "",
+      currentCTC: "",
+      noticePeriod: "",
+    });
 
-      localStorage.setItem("currentSeeker", response.data.seeker._id)
+    localStorage.setItem("currentSeeker", response.data.seeker._id);
+    navigate('/job-seeker/alljobs');
+  } catch (error) {
+    toast.error("Signup failed! Please try again.");
+    console.error("Error submitting form", error);
+  }
+};
 
-      navigate('/job-seeker/alljobs')
-
-    } catch (error) {
-      console.error("Error submitting form", error);
-      toast.error("Signup failed! Please try again.");
-    }
-  };
 
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-zinc-900 text-white p-6">
