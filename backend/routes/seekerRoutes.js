@@ -8,7 +8,8 @@ const {
         deleteSeeker,
         getJobsBySkills,
         applyForJob,
-        searchSeekers
+        searchSeekers,
+        getAppliedJobs
 } = require("../controllers/Seeker");
 
 router.post('/signup' ,seekerSignup);
@@ -18,5 +19,6 @@ router.delete('/delete/:seekerId', deleteSeeker);
 router.get('/jobbyskills', getJobsBySkills) 
 router.get('/applyforjob/:seekerId/:jobId', applyForJob);
 router.get('/search', searchSeekers);
+router.get('/applied-for-jobs/:seekerId', getAppliedJobs);
 
 module.exports = router;
