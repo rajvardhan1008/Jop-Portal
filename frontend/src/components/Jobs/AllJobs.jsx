@@ -16,8 +16,10 @@ const AllJobs = () => {
         const response = await axios.get(BASE_URL + '/jobs/all');
         console.log(response.data.jobs); // Debugging API response
         setAlljobs(response.data.jobs); // Assuming response.data is an array
+        toast.success("All Jobs Fetched Successfully");
       } catch (error) {
         console.error("Error fetching jobs:", error);
+        toast.error("Unable to Fetch Jobs");
       }
     };
 
