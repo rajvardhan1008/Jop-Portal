@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 const JobSeekerForm = () => {
 
+  const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -32,7 +34,7 @@ const JobSeekerForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/job-seeker/signup",
+        BASE_URL + '/job-seeker/signup',
         formData
       );
       console.log(response.data.seeker._id);

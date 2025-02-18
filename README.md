@@ -32,7 +32,7 @@ npm install nodemon
 
 
 
-### ******************************************* FrontEnd *************************************************
+### ************************************** FrontEnd *********************************************
 
 Below are the essential dependencies used in this project and their installation commands.
 
