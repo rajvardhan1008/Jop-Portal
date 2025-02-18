@@ -13,7 +13,7 @@ dotenv.config();
 database.connect();
 
 app.use(cors({
-  origin: "https://rajvardhan-job-portal.vercel.app",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
