@@ -7,6 +7,8 @@ function CreateJob() {
 
     const navigate = useNavigate();
 
+    const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
+
     const [formData, setFormData] = useState({
         title: "",
         skill: "",
@@ -27,8 +29,7 @@ function CreateJob() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post(
-            "http://localhost:4000/api/jobs/create",
+          const response = await axios.post(BASE_URL + '/jobs/create',
             formData
           );
           toast.success("Job Created Successfully");
