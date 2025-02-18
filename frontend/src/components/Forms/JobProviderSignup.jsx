@@ -31,11 +31,12 @@ const JobProviderSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("data", formData);
       const response = await axios.post(
         BASE_URL + '/job-provider/signup',
         formData
       );
-      console.log(response.data);
+      console.log("After respoonse",response);
       toast.success("Job Provider Signup Success");
       
       // Clear input fields after successful submission
