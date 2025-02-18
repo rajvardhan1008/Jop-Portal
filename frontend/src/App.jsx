@@ -7,6 +7,7 @@ import AllJobs from './components/Jobs/AllJobs';
 import AllSeekers from './components/Seeker/AllSeekers';
 import CreateJob from './components/Forms/CreateJob';
 import ProviderJobs from './components/Provider/ProviderJobs';
+import History from './components/Seeker/History';
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
       <Route path="job-provider/jobs"  element = {<ProviderJobs></ProviderJobs>}></Route>
 
       <Route path="job-seeker/allseekers" element = {<AllSeekers></AllSeekers>} ></Route>
+
+      <Route path="job-seeker/history" element = {<History></History>} ></Route>
 
     </Routes>
   );
