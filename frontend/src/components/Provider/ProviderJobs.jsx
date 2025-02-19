@@ -53,7 +53,9 @@ function ProviderJobs() {
     }
 
   return (
-    <div className='bg-slate-800 w-full h-screen flex justify-center items-center text-white text-xl'>
+    <div className='bg-slate-900 w-full min-h-screen text-white text-xl overflow-hidden'>
+        <h1 className='lg:text-4xl text-3xl text-center pt-4'>All Jobs Created By You</h1>
+        <div className='flex justify-center items-center pt-8'>
         {
             allJobs && allJobs.length > 0 ? (
                 <div className="space-y-8 flex flex-col items-center justify-center">
@@ -83,6 +85,7 @@ function ProviderJobs() {
                 <p>No Job is Created by Provider</p>
             )
         }
+        </div>
         <ToastContainer />
     </div>
   )
