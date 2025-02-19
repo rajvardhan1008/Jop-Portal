@@ -49,10 +49,10 @@ const AllJobs = () => {
   }
 
   return (
-    <div className="bg-zinc-900 w-full text-white p-6 relative">
+    <div className="bg-zinc-900 w-full text-white p-6 relative overflow-x-hidden">
       <h2 className="text-3xl font-bold mb-4 text-center">All Jobs</h2>
 
-      <div className="flex gap-4 absolute top-4 left-[75%]">
+      <div className="flex gap-4 absolute lg:top-4 top-20 left-[15%] lg:left-[75%]">
         <div className="bg-green-700 px-4 py-2 rounded-lg cursor-pointer font-semibold"
         onClick ={()=> navigate('/')}
         >
@@ -69,7 +69,7 @@ const AllJobs = () => {
       </div>
       
       {alljobs.length > 0 ? (
-        <div className="space-y-8 flex flex-col items-center justify-center">
+        <div className="lg:space-y-8 pt-16 flex flex-col gap-8 items-center justify-center">
           {alljobs.map((job) => (
             <div key={job._id} className="p-4 bg-zinc-800 rounded-lg shadow-md w-[500px] flex flex-col items-center justify-center gap-2">
               <h3 className="text-xl font-semibold bg-indigo-800 rounded-lg py-2 w-full text-center">{job.title}</h3>
