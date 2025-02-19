@@ -17,19 +17,19 @@ const App = () => {
 
       <Route path="/job-seeker/signup" element={<JobSeekerSignup />} />
 
-      <Route path="job-seeker/alljobs" element = {<AllJobs></AllJobs>} ></Route>
+      <Route path="/job-seeker/alljobs" element = {<AllJobs></AllJobs>} ></Route>
 
-      <Route path="job-provider/signup" element={<JobProviderSignup></JobProviderSignup>} ></Route>
+      <Route path="/job-provider/signup" element={<JobProviderSignup></JobProviderSignup>} ></Route>
 
       <Route path="/job-provider/createjob" element={<CreateJob></CreateJob>} ></Route>
 
-      <Route path="job-provider/jobs"  element = {<ProviderJobs></ProviderJobs>}></Route>
+      <Route path="/job-provider/jobs"  element = {<ProviderJobs></ProviderJobs>}></Route>
 
-      <Route path="job-seeker/allseekers" element = {<AllSeekers></AllSeekers>} ></Route>
+      <Route path="/job-seeker/allseekers" element = {<AllSeekers></AllSeekers>} ></Route>
 
-      <Route path="job-seeker/history" element = {<History></History>} ></Route>
+      <Route path="/job-seeker/history" element = {<History></History>} ></Route>
 
-      <Route path="job-seeker/profile" element = {<SeekerProfile></SeekerProfile>} ></Route>    
+      <Route path="/job-seeker/profile" element = {<SeekerProfile></SeekerProfile>} ></Route>    
 
     </Routes>
   );
