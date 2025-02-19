@@ -35,10 +35,10 @@ function History() {
     
 
   return (
-    <div className="bg-zinc-900 w-full text-white p-6 relative max-h-full">
-      <h2 className="text-3xl font-bold mb-4 text-center">All Jobs Applied by You</h2>
+    <div className="bg-zinc-900 w-full text-white p-6 relative max-h-screen overflow-hidden">
+      <h2 className="text-3xl font-bold text-center">All Jobs Applied by You</h2>
 
-      <div className="flex gap-4 absolute top-4 left-[85%]">
+      <div className="flex gap-4 absolute lg:top-4 left-[40%] top-20 lg:left-[85%]">
         <div className="bg-green-700 px-4 py-2 rounded-lg cursor-pointer font-semibold"
         onClick ={()=> navigate('/')}
         >
@@ -47,7 +47,7 @@ function History() {
       </div>
       
       {alljobs.length > 0 ? (
-        <div className="space-y-8 flex flex-col items-center justify-center min-h-screen">
+        <div className="lg:space-y-8 -mt-16 flex flex-col items-center justify-center min-h-screen">
           {alljobs.map((job) => (
             <div key={job._id} className="p-4 bg-zinc-800 rounded-lg shadow-md w-[500px] flex flex-col items-center justify-center gap-2">
               <h3 className="text-xl font-semibold bg-indigo-800 rounded-lg py-2 w-full text-center">{job.title}</h3>
@@ -70,7 +70,7 @@ function History() {
           ))}
         </div>
       ) : (
-        <p>No Job Found</p>
+        <p className="text-xl text-center w-full">No Job Found</p>
       )}
       <ToastContainer></ToastContainer>
     </div>
