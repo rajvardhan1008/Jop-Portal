@@ -9,6 +9,7 @@ import CreateJob from './components/Forms/CreateJob';
 import ProviderJobs from './components/Provider/ProviderJobs';
 import History from './components/Seeker/History';
 import SeekerProfile from './components/Seeker/SeekerProfile';
+import ProviderProfile from './components/Provider/ProviderProfile';
 
 const App = () => {
   return (
@@ -29,7 +30,9 @@ const App = () => {
 
       <Route path="/job-seeker/history" element = {<History></History>} ></Route>
 
-      <Route path="/job-seeker/profile/edit" element = {<SeekerProfile></SeekerProfile>} ></Route>    
+      <Route path="/job-seeker/profile" element = {<SeekerProfile></SeekerProfile>} ></Route>
+
+      <Route path="/job-provider/profile" element = {<ProviderProfile></ProviderProfile>} ></Route>    
 
     </Routes>
   );
