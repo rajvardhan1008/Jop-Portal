@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const AllSeekers = () => {
   const [allSeekers, setAllSeekers] = useState([]);
 
-   const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api'
+  const BASE_URL = 'https://jop-portal-8yaz.onrender.com/api';
 
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const AllSeekers = () => {
     <div className="bg-zinc-900 w-full text-white p-6 relative">
       <h2 className="text-3xl font-bold mb-4 text-center">All Job Seekers</h2>
 
-      <div className="flex  gap-4 absolute left-[75%] top-4">
+      <div className="flex  gap-4 absolute left-[60%] top-4">
         <button className="bg-green-700 hover:bg-green-600 px-4 py-1 font-semibold rounded-lg"
         onClick={() => navigate('/job-provider/createjob')}
         >Create A Job</button>
@@ -37,6 +37,9 @@ const AllSeekers = () => {
         <button className="bg-green-700 hover:bg-green-600 px-4 py-1 font-semibold rounded-lg"
         onClick={() => navigate('/job-provider/jobs')}
         >Your Jobs</button>
+        <button className="bg-[#549da5] px-4 py-1 font-semibold rounded-lg"
+        onClick={() => navigate('/job-provider/profile')}
+        >Profile</button>
       </div>
       
       {allSeekers.length > 0 ? (
