@@ -53,7 +53,7 @@ function SeekerProfile() {
 
   return (
     <div className='w-full min-h-screen bg-zinc-900 text-white'>
-      <h1 className='text-center text-4xl pt-4 font-semibold'>Current Profile</h1>
+      <h1 className='text-center text-4xl pt-4 font-semibold'>Your Profile</h1>
       <div className='flex flex-col justify-center items-center gap-4 pt-8'>
 
         <div className='flex flex-col gap-1'>
