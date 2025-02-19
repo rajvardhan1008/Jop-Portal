@@ -29,7 +29,7 @@ const App = () => {
 
       <Route path="/job-seeker/history" element = {<History></History>} ></Route>
 
-      <Route path="/job-seeker/profile" element = {<SeekerProfile></SeekerProfile>} ></Route>    
+      <Route path="/job-seeker/profile/edit" element = {<SeekerProfile></SeekerProfile>} ></Route>    
 
     </Routes>
   );
