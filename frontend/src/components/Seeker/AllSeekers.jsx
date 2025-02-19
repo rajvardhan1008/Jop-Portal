@@ -43,7 +43,7 @@ const AllSeekers = () => {
       </div>
       
       {allSeekers.length > 0 ? (
-        <div className="lg:space-y-4 pt-48 flex flex-col items-center justify-center">
+        <div className="lg:space-y-4 pt-48 -mt-32 flex flex-col items-center justify-center">
           {allSeekers.map((seeker) => (
             <div 
               key={seeker._id} 
