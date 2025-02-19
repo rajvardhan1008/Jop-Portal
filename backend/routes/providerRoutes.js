@@ -6,7 +6,8 @@ const {
     getAllProviders,
     updateProvider,
     deleteProvider,
-    getProviderJobs
+    getProviderJobs,
+    getProviderById
 } = require("../controllers/Provider");
 
 router.post('/signup', signupProvider);
@@ -14,5 +15,6 @@ router.get('/getall', getAllProviders);
 router.put('/update/:providerId', updateProvider);
 router.delete('/delete/:providerId', deleteProvider);
 router.get('/jobs/:providerId', getProviderJobs);
+router.get('/profile/:providerId', getProviderById)
 
 module.exports = router;
