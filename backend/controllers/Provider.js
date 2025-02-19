@@ -40,6 +40,31 @@ exports.signupProvider = async (req, res) => {
     }
 };
 
+exports.getProviderById = async(req, res)=>{
+    const {providerId} = req.params;
+    try{
+        const user = await Provider.findById(providerId);
+        if(!user){
+            return res.status(404).send({
+                success:false,
+                message:'User Not Found'
+            });
+        }
+
+        return res.status(200).send({
+            success:true,
+            user, 
+            message:'User Fetched Successfully',
+        });
+        
+    } catch(err){
+        return res.status(500).send({
+            success:false,
+            message:'User Error',
+        })
+    }
+}
+
 exports.getAllProviders = async (req, res) => {
     try {
         const allProviders = await Provider.find();
@@ -155,3 +180,4 @@ exports.getProviderJobs = async(req, res) => {
         })
     }
 }
+
