@@ -24,10 +24,10 @@ const AllSeekers = () => {
   }, []); // Runs only once when the component mounts
 
   return (
-    <div className="bg-zinc-900 w-full text-white p-6 relative">
+    <div className="bg-zinc-900 w-full text-white p-6 relative overflow-hidden">
       <h2 className="text-3xl font-bold mb-4 text-center">All Job Seekers</h2>
 
-      <div className="flex  gap-4 absolute left-[60%] top-4">
+      <div className="flex lg:flex-row flex-col left-[35%] gap-4 absolute lg:left-[60%] top-20 lg:top-4">
         <button className="bg-green-700 hover:bg-green-600 px-4 py-1 font-semibold rounded-lg"
         onClick={() => navigate('/job-provider/createjob')}
         >Create A Job</button>
@@ -43,7 +43,7 @@ const AllSeekers = () => {
       </div>
       
       {allSeekers.length > 0 ? (
-        <div className="space-y-4 flex flex-col items-center justify-center">
+        <div className="lg:space-y-4 pt-48 flex flex-col items-center justify-center">
           {allSeekers.map((seeker) => (
             <div 
               key={seeker._id} 
