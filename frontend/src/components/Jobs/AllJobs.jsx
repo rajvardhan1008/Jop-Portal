@@ -63,7 +63,7 @@ const AllJobs = () => {
           History
         </div>
         <div className='bg-[#86892f] px-4 py-2 rounded-lg cursor-pointer font-semibold'
-        onClick={() => navigate('/job-seeker/profile')}>
+        onClick={() => navigate('/job-seeker/profile/edit')}>
           Profile
         </div>
       </div>
