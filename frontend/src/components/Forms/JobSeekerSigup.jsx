@@ -14,6 +14,8 @@ const JobSeekerForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    email: "",
+    password:"",
     skills: "",
     experience: "",
     location: "",
@@ -45,6 +47,8 @@ const JobSeekerForm = () => {
       setFormData({
         firstName: "",
         lastName: "",
+        email: "",
+        password: "",
         skills: "",
         experience: "",
         location: "",
@@ -91,6 +95,26 @@ const JobSeekerForm = () => {
               required
             />
           </div>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 bg-zinc-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Your Neumeric Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full p-3 bg-zinc-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
 
           <input
             type="text"
