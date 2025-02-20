@@ -12,6 +12,16 @@ const seekerSchema = new mongoose.Schema(
             required:true,
             trim:true,
         },
+        email:{
+            type:String,
+            required:true,
+            trim:true,
+        },
+        password:{
+            type:Number,
+            required:true,
+            trim:true,
+        },
         skills:[
             {
                 type:String,
