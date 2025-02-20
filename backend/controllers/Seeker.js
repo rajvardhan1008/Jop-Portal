@@ -1,19 +1,20 @@
 const Seeker = require('../models/Seeker');
 const Job = require("../models/Job");
 
-
 exports.seekerSignup = async(req, res)=>{
     try{
         const {
             firstName, 
             lastName, 
-            skills, 
+            skills,
+            email,
+            password, 
             experience, 
             location,
             currentCTC,
             noticePeriod} = req.body;
 
-        if(!firstName || !lastName || !skills || !experience ||  !location || !currentCTC || !noticePeriod){
+        if(!firstName || !lastName || !skills || !experience ||  !location || !currentCTC || !noticePeriod || !password || !email){
             return res.status(404).send({
                 success:false,
                 message:'Please fill all fields',
@@ -24,6 +25,8 @@ exports.seekerSignup = async(req, res)=>{
             firstName,
             lastName,
             skills,
+            email,
+            password,
             experience,
             location,
             currentCTC,
