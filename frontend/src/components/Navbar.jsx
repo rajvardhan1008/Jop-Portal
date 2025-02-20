@@ -13,8 +13,8 @@ function Navbar() {
 
         <div className="flex gap-4 text-lg">
             <p className="cursor-pointer" onClick={()=> navigate('/')}>Home</p>
-            <p className="cursor-pointer" onClick={()=> navigate('/seeker/home')}>Seeker</p>
-            <p className="cursor-pointer" onClick={()=> navigate('/provider/home')}>Provider</p>
+            <p className="cursor-pointer" onClick={()=> navigate('/job-seeker/home')}>Seeker</p>
+            <p className="cursor-pointer" onClick={()=> navigate('/job-provider/home')}>Provider</p>
         </div>
 
     </div>
