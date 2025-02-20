@@ -12,6 +12,7 @@ import SeekerProfile from './components/Seeker/SeekerProfile';
 import ProviderProfile from './components/Provider/ProviderProfile';
 import SeekerHome from './components/Seeker/SeekerHome';
 import ProviderHome from './components/Provider/ProviderHome';
+import SeekerLogin from './components/Forms/SeekerLogin';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <Route path="/" element={<JobSelector />} />
 
       <Route path="/job-seeker/signup" element={<JobSeekerSignup />} />
+      
+      <Route path="/job-seeker/login" element={<SeekerLogin />} />
 
       <Route path="/job-seeker/home" element={<SeekerHome />} />
 
