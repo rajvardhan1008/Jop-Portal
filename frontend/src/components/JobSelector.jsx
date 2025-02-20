@@ -7,7 +7,7 @@ const JobSelector = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen bg-zinc-900 text-white ">
+    <div className="w-screen h-screen bg-zinc-900 text-white overflow-hidden">
       <Navbar></Navbar>
       <div className="w-full min-h-screen p-6 flex flex-col gap-6 bg-zinc-800 rounded-2xl shadow-lg justify-center items-center">
         <div
