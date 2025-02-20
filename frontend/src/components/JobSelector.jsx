@@ -18,7 +18,7 @@ const JobSelector = () => {
           👨‍💼 Job Seeker
         </div>
         <div
-          onClick={() => navigate('job-provider/home')}
+          onClick={() => navigate('/job-provider/home')}
           to="/job-provider/signup"
           className="w-64 h-16 bg-green-600 hover:bg-green-500 text-xl font-semibold text-white rounded-lg shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
         >
