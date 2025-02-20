@@ -10,6 +10,8 @@ import ProviderJobs from './components/Provider/ProviderJobs';
 import History from './components/Seeker/History';
 import SeekerProfile from './components/Seeker/SeekerProfile';
 import ProviderProfile from './components/Provider/ProviderProfile';
+import SeekerHome from './components/Seeker/SeekerHome';
+import ProviderHome from './components/Provider/ProviderHome';
 
 const App = () => {
   return (
@@ -18,9 +20,13 @@ const App = () => {
 
       <Route path="/job-seeker/signup" element={<JobSeekerSignup />} />
 
+      <Route path="/job-seeker/home" element={<SeekerHome />} />
+
       <Route path="/job-seeker/alljobs" element = {<AllJobs></AllJobs>} ></Route>
 
       <Route path="/job-provider/signup" element={<JobProviderSignup></JobProviderSignup>} ></Route>
+
+      <Route path="/job-provider/home" element={<ProviderHome />} />
 
       <Route path="/job-provider/createjob" element={<CreateJob></CreateJob>} ></Route>
 
