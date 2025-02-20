@@ -6,6 +6,7 @@ const database = require('./config/database');
 const seekerRoutes = require('./routes/seekerRoutes');
 const providerRoutes = require('./routes/providerRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const otpRoutes = require('./routes/otpRoutes');
 
 const PORT = process.env.PORT || 4000;
 
