@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require("cors");
+const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv');
 const database = require('./config/database');
@@ -12,12 +12,7 @@ const PORT = process.env.PORT || 4000;
 dotenv.config();
 database.connect();
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
@@ -31,7 +26,9 @@ app.get('/', (req, res) => {
 app.use('/api/job-seeker', seekerRoutes);
 app.use('/api/job-provider', providerRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/otp', otpRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening at ${PORT}`);
 });
+  
