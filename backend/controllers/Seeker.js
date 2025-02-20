@@ -47,6 +47,48 @@ exports.seekerSignup = async(req, res)=>{
       }
 }
 
+exports.seekerLogin = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: "Please provide email and password",
+            });
+        }
+
+        const seeker = await Seeker.findOne({ email });
+
+        if (!seeker) {
+            return res.status(404).json({
+                success: false,
+                message: "Seeker not found",
+            });
+        }
+
+        if (seeker.password !== password) {
+            return res.status(401).json({
+                success: false,
+                message: "Incorrect password",
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Login successful",
+            seeker,
+        });
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            success: false,
+            message: "Something went wrong. Please try again.",
+        });
+    }
+};
+
 exports.getSeekerById = async(req, res)=>{
     const {seekerId} = req.params;
     try{
