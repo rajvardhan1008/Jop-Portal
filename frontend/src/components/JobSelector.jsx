@@ -1,13 +1,15 @@
 import React from 'react';
 import {useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const JobSelector = () => {
 
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen bg-zinc-900 text-white flex flex-col items-center justify-center">
-      <div className="w-full max-w-lg p-6 flex flex-col gap-6 bg-zinc-800 rounded-2xl shadow-lg items-center">
+    <div className="w-screen h-screen bg-zinc-900 text-white ">
+      <Navbar></Navbar>
+      <div className="w-full min-h-screen p-6 flex flex-col gap-6 bg-zinc-800 rounded-2xl shadow-lg justify-center items-center">
         <div
           onClick = {() => navigate('/job-seeker/home')}
           to="/job-seeker/signup"
